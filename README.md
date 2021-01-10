@@ -6,6 +6,12 @@ Modelling uncalibrated accelerometer data are collected from 15 participantes pe
 To setup the whole project just clone repo and run the following command
 
     bash setup.sh
+    
+After this logs are available from
+
+    tail -f service.log
+    
+Service is up and running at 127.0.0.0:8000
 
 # Files
 
