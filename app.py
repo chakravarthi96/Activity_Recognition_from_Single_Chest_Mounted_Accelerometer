@@ -1,9 +1,8 @@
-import os
-import json
+import uuid
+import time
 import joblib
 import uvicorn
 from fastapi import FastAPI
-from random_object_id import generate
 from fastapi.openapi.utils import get_openapi
 from fastapi.responses import RedirectResponse
 
@@ -35,11 +34,38 @@ async def redirect():
 
 @app.get('/api/v1/predict')
 async def predict(x, y, z):
+    start_ms = int(round(time.time() * 1000))
     if x and y and z:
         model = joblib.load("weights.joblib")
-        return categories[int(model.predict([[x, y, z]]))]
+        return {
+            "meta": {
+                "x": x,
+                "y": y,
+                "z": z,
+                "time_ms": int(round(time.time() * 1000)) - start_ms,
+                "status": "success",
+                "job_id": str(uuid.uuid1())
+            },
+            "data": {
+                "activity": str(categories[int(model.predict([[x, y, z]]))]),
+                "label": int(model.predict([[x, y, z]]))
+            }
+        }
     else:
-        return None
+        return {
+            "meta": {
+                "x": x,
+                "y": y,
+                "z": z,
+                "time_ms": int(round(time.time() * 1000)) - start_ms,
+                "status": "failure",
+                "job_id": str(uuid.uuid1())
+            },
+            "data": {
+                "activity": None,
+                "label": None
+            }
+        }
 
 
 def vicara_openapi():
