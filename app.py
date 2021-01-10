@@ -82,7 +82,7 @@ def vicara_openapi():
 
     openapi_schema["info"]["x-logo"] = {
         "url":
-        "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcS7BuMiEr54Mh-wTAW_dJlBzah4o89hPqkufw&usqp=CAU"
+            "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcS7BuMiEr54Mh-wTAW_dJlBzah4o89hPqkufw&usqp=CAU"
     }
     app.openapi_schema = openapi_schema
 

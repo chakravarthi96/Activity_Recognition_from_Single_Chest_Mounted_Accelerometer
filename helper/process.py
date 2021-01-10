@@ -62,24 +62,40 @@ Voting_Classifier = VotingClassifier(estimators=[
                                      voting='hard')
 
 models = {
-    "Logistic_Regression": Logistic_Regression,
-    "K_Neighbors": K_Neighbors_Classifier,
-    "BernoulliNB": Bernoulli_Naive_Bayes,
-    "ComplementNB": Complement_Naive_Bayes,
-    "GaussianNB": Gaussian_Naive_Bayes,
-    "MultinomialNB": Multinomial_Naive_Bayes,
-    "Linear_Support_Vector": Linear_Support_Vector_Classifier,
-    "Support_Vector": Support_Vector_Classifier,
-    "Decision_Tree": Decision_Tree_Classifier,
-    "Extra_Tree": Extra_Tree_Classifier,
-    "Multi_layer_Perceptron": Multi_layer_Perceptron_Classifier,
-    "Ada_Boost": Ada_Boost_Classifier,
-    "Bagging": Bagging_Classifier,
-    "ExtraTrees": ExtraTrees_Classifier,
+    "Logistic_Regression":
+        Logistic_Regression,
+    "K_Neighbors":
+        K_Neighbors_Classifier,
+    "BernoulliNB":
+        Bernoulli_Naive_Bayes,
+    "ComplementNB":
+        Complement_Naive_Bayes,
+    "GaussianNB":
+        Gaussian_Naive_Bayes,
+    "MultinomialNB":
+        Multinomial_Naive_Bayes,
+    "Linear_Support_Vector":
+        Linear_Support_Vector_Classifier,
+    "Support_Vector":
+        Support_Vector_Classifier,
+    "Decision_Tree":
+        Decision_Tree_Classifier,
+    "Extra_Tree":
+        Extra_Tree_Classifier,
+    "Multi_layer_Perceptron":
+        Multi_layer_Perceptron_Classifier,
+    "Ada_Boost":
+        Ada_Boost_Classifier,
+    "Bagging":
+        Bagging_Classifier,
+    "ExtraTrees":
+        ExtraTrees_Classifier,
     "Histogram_based_Gradient_Boosting":
-    Histogram_based_Gradient_Boosting_Classifier,
-    "Random_Forest": Random_Forest_Classifier,
-    "Voting": Voting_Classifier,
+        Histogram_based_Gradient_Boosting_Classifier,
+    "Random_Forest":
+        Random_Forest_Classifier,
+    "Voting":
+        Voting_Classifier,
 }
 
 
@@ -121,7 +137,4 @@ def run(data):
         response[model] = pipeline(xTrain, xTest, yTrain, yTest, models[model],
                                    (weights_location + model + ".joblib"))
 
-    return {
-        k: v
-        for k, v in sorted(response.items(), key=lambda item: item[1])
-    }
+    return {k: v for k, v in sorted(response.items(), key=lambda item: item[1])}

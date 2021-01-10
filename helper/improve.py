@@ -49,7 +49,4 @@ def run_v1(data):
             xTrain, xTest, yTrain, yTest, model,
             (weights_location + "KNN_K_" + str(i) + ".joblib"))
 
-    return {
-        k: v
-        for k, v in sorted(response.items(), key=lambda item: item[1])
-    }
+    return {k: v for k, v in sorted(response.items(), key=lambda item: item[1])}

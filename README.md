@@ -2,6 +2,11 @@
 
 Modelling uncalibrated accelerometer data are collected from 15 participantes performing 7 activities. The dataset provides challenges for identification and authentication of people using motion patterns.
 
+# Setup
+To setup the whole project just clone repo and run the following command
+
+    bash setup.sh
+
 # Files
 
 **HELPER FOLDER** contains the following python files.
