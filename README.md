@@ -80,10 +80,10 @@ To start the server
 
     uvicorn app:app --reload
 
-Visit `http://127.0.0.1:8000/`  \
-To use it as micro-service\
+Visit `http://127.0.0.1:8000/`
+To use it as micro-service
 
-Example\
+Example
 
 - **X** = _1500_
 - **Y** = _1500_
