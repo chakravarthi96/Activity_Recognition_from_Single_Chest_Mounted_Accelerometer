@@ -11,7 +11,7 @@ After this logs are available from
 
     tail -f service.log
     
-Service is up and running at 127.0.0.0:8000
+Service is up and running at `http://127.0.0.1:8000/`
 
 # Files
 
@@ -21,9 +21,9 @@ Service is up and running at 127.0.0.0:8000
 - process.py
 - improve.py
 
-**ingest.py** contains the code to collate all the .csv which are part of the dataset into dataframe.
-**process.py** contains the code to perform modelling against the dataset with different algorithms
-**improve.py** contains the code to perform feature selection and improvement of accuracy defined by the scope of the algorithm
+**ingest.py** contains the code to collate all the .csv which are part of the dataset into dataframe.\
+**process.py** contains the code to perform modelling against the dataset with different algorithms\
+**improve.py** contains the code to perform feature selection and improvement of accuracy defined by the scope of the algorithm\
 
 # Requirements
 
@@ -60,8 +60,8 @@ Service is up and running at 127.0.0.0:8000
 
 # Reason why KNN was choosen as the Algorithm to be improved upon
 - The weight's file is lighter than the others listed in the Accuracy Report.
-- The time taken to train is lesser than the others listed in the Accuracy Report.
-- The inference time is faster than the others listed in the Accuracy Report.
+- The time taken to train is lesser than the others.
+- The inference time is faster than the others.
 
 # Improving KNN
 
@@ -80,9 +80,10 @@ To start the server
 
     uvicorn app:app --reload
 
-Visit `http://127.0.0.1:8000/`
-To use it as micro-service
-Example
+Visit `http://127.0.0.1:8000/`  \
+To use it as micro-service\
+
+Example\
 
 - **X** = _1500_
 - **Y** = _1500_
